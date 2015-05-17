@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+
+# Don't track build output
+dist
