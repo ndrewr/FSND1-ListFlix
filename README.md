@@ -1,7 +1,8 @@
 ListFlix - Udacity Full Stack Nanodegree Project 1
 ***************************************************************
 
-Project live at:
+Project live at: 
+http://www.listflix.appspot.com/
 
 Summary: 
 Sharing a list of 'favorite movies'. Clicking on a movie poster loads it into the Clipreel view box at the top.
