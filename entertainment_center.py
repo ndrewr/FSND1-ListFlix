@@ -1,3 +1,4 @@
+import webapp2
 import media
 import fresh_tomatoes
 
@@ -22,11 +23,30 @@ movies = [
   ),
   media.Movie(
     'Double Take',
-    'A successful investment banker is gets framed for the crimes of a Mexican drug cartel. All of them. He recruits a professional smuggler to get him to a safe location. But all is decidedly not as it seems!',
+    'A successful investment banker is framed for the crimes of a Mexican drug cartel. All of them. He recruits a professional smuggler to get him to a safe location. But all is decidedly not as it seems!',
     'http://upload.wikimedia.org/wikipedia/en/f/fd/Double_Take_%282001%29_film_poster.jpg',
     'https://www.youtube.com/watch?v=3n8cJ6Kl8vc'
+  ),
+  media.Movie(
+    'Snakes on a Plane',
+    'A suspenseful tail about one man trying to save a planeful of passengers from a slithering, scaly squad of intruders.',
+    'http://upload.wikimedia.org/wikipedia/en/4/41/SOAP_poster.jpg',
+    'https://www.youtube.com/watch?v=u6Squ9a2kO4'
+  ),
+  media.Movie(
+    'Deuce Bigalow Male Gigolo',
+    'A lonely man, on the cusp of middle-age and bordering on depression, seizes an unexpected opportunity to live out his fantasies.',
+    'http://upload.wikimedia.org/wikipedia/en/8/82/Deucebigalowmalegigolotp.jpg',
+    'https://www.youtube.com/watch?v=wk_19DT6y9Y'
   )
 ]
 
 
-fresh_tomatoes.open_movies_page(movies)
+class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write(fresh_tomatoes.open_movies_page(movies))
+
+
+app = webapp2.WSGIApplication([
+    ('/', MainHandler)
+], debug=True)
