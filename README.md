@@ -3,7 +3,7 @@ Developer - Andrew Roy Chen May 15 2015
 =============================================================================
 
 RUNNING THE PROJECT LOCALLY:
-In the project folder run the command:
+In the project folder run the command (modify port# as needed):
 
 dev_appserver.py --port=9999 listflix
 
